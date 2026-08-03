@@ -13,7 +13,8 @@ const ESCOLA ="Senac";
 ```
 
 
-- Arrays e objetos genéricos
+- Arrays: `$alunos =[ "a" , "b"];`
+- bjetos genéricos
 
 ## Recursos para estudar 
 
