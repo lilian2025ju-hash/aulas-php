@@ -32,6 +32,32 @@
 
         <hr>
 
+        <!-- duplo pipe -->
+         <h2>|| (ou/or)</h2>
+         <p>Retorna <b>verdadeiro/true</b> se pelo menos <b>uma</b> das condições for verdadeiras.</p>
+
+         <?php 
+        /*dar desconto a um cliente desde que ele(A) seja VIP ou que tenha cupom de <desconto */
+        $valor = 1000;
+        $clienteVip = true; //valor/tipo lógico (ou booleano)
+        $temCupom = false; //valor/tipo lógico (ou booleano)
+        $percentualDesconto = 0.10; //10%
+
+        if($clienteVip || $temCupom):
+        ?>
+
+        <p>Desconto aplicado com sucesso!</p>
+        <p>Valor: R$<?= $valor - $valor * $percentualDesconto ?></p>
+        <?php 
+        else:
+        ?>
+        <p>Sem desconto</p>
+        <p>Valor: R$<?= $valor ?></p>
+
+        <?php 
+        endif;
+        ?>
+
 
 
 
