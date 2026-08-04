@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP - condicionais</title>
+    <style>
+        .comprar {color: red;}
+        .normal { color: blue;}
+    </style>
 </head>
 <body>
     <h1>Trabalhando com estruturas condicionais</h1>
@@ -32,7 +36,7 @@
     <h2>Condicional Composta: <code>if/else</code></h2>
     <?php 
     $produto = "ultrabook";
-    $qtdEmEstoque = 30;
+    $qtdEmEstoque = 03;
     $qtdCritica = 5;
 ?>
 
@@ -41,9 +45,9 @@
 <p><b>Quantidade em estoque:</b><?= $qtdEmEstoque ?></p>
 <?php 
 if($qtdEmEstoque < $qtdCritica){
-    echo "<p>É necessário comprar/repor</p>";
+    echo "<p class=\"comprar\">É necessário comprar/repor</p>";
 } else{
-    echo "<p> Estoque normal.</p>";
+    echo "<p class =\"normal\"> Estoque normal.</p>";
 }
 
 ?>
