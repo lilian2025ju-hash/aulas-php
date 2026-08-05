@@ -37,6 +37,28 @@
     
     ?>
     <h3>Resultado (Usando só onde é necessário)</h3>
+    <?php 
+    if ($idade >= 18):
+    ?>
+       <p><b><?= $aluno ?></b> é maior de idade</p>
+    <?php 
+    else:
+    ?>
+    <p><i><?=$aluno?></i>é menor de idade</p> 
+ <?php
+endif; 
+    ?>
+    <h3>Resultado (Refatorado)</h3>
+    <?php 
+    if($idade >= 18){
+     $htmlSaida = "<b>$aluno</b>";
+     $palavra = "maior";
+    } else{
+        $htmlSaida = "<i>$aluno</i>";
+        $palavra = "menor";
+    }
+    ?>
+    <p><?= $htmlSaida ?> é <?= $palavra ?> de idade</p>
 
     
 </body>
