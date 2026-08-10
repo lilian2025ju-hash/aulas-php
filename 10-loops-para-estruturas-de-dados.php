@@ -108,13 +108,16 @@
 
   ];
 
-  foreach($clientes as $clientes):
+  foreach($clientes as $cliente):
 
   ?>
-  <p><b>nome:</b><span class=""></span></p>
+  <p><b>nome:</b><span class="bg-primary-subtle"><?= $cliente["nome"] ?>
+</span></p>
+<p><b>email</b><span class="bg-dark-subtle p-1"><?= $cliente["email"] ?></span></p>
 
-
-
+<?php
+endforeach;
+?>
 
     </div>
 
