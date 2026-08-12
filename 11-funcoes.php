@@ -78,7 +78,7 @@ function exibirMensagem ($mensagem, $pessoa = ""){
 <h2>Função com  indução de tipos de dados</h2>
 <p>Nesta abordagem, definimos tipos de dados para os parâmetros e para o retorno da função.</p>
  <?php 
- function verificarNegativo (int $valor):string{
+ function verificarNegativo (int $valor): string {
  if($valor < 0) return "é negativo";
  return "não é negativo";
 
@@ -92,7 +92,7 @@ function exibirMensagem ($mensagem, $pessoa = ""){
 <h2>Função anônima (ou lambda)</h2>
 <?php //Sempre Declare primeiro a função Antes de chamar
 $multiplicar = function( float $valor, float $valor2 ): float {
-    return $valor1 * $valor2;
+    return $valor * $valor2;
 };
 ?>
 
