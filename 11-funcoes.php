@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funçoes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+<h1>Trabalando com funções</h1>
+<hr>
+
+<h2>Função como procedimento( ou sub-rotina)</h2>
+<p>procedimentos não tetornam nada.</p>
+
+<?php 
+function exibirDadosDoAutor(){
+echo"<h4>Fulano de Tal</h4>";
+echo "<p>Aplicação <b>Back-End</b> como exemplo</p>";
+
+}
+?>
+ <h3>Chamar/Invocar a função / procedimento</h3>
+ <?php exibirDadosDoAutor() ?>
+ <div><?php exibirDadosDoAutor() ?></div>
+
+ <hr>
+
+ <h2>Função com parâmetros (ou argumentos)</h2>
+ <?php 
+ function somar($valor, $valor2) {
+    $total = $valor + $valor2;
+    return $total; 
+ }
+ 
+ ?>
+ <h3>Chamada /retorno da função somar</h3>
+ <p>Resultado 1: <?= somar (10,20)  ?> =</p>
+ <p>Resultado 2: <?= somar (1234, 250) ?> =</p>
+ <p>Resultado 2: <?= somar (2, 10.5) ?> =</p>
+  
+ <?php 
+ //Variável de escopo Global
+ $precoProdutoA =250;
+ $precoProdutoB = 300;
+
+/* Podemos passar valores de outras variáveis para os parâmetros de uma função. */
+
+$precoProduto = somar ($precoProdutoA, $precoProdutoB);
+ 
+ ?>
+ <p>Resultado 4:<?= $precoProduto ?></p>
+//Utilizando função como parte de condição de um if
+ 
+<?php if(somar (100, 500) > 1200): ?>
+    <p class = "text-sucess">meta atingida!</p>
+    <?php else: ?>
+        <p class ="test-danger">Não foi dessa vez</p>
+        <?php endif; ?>
+
+        <hr>
+
+<h2>Função com parãmetros opcionais</h2>
+<?php 
+/*Neste caso, deixamos o parâmetro pessoa com uma valor padrão(no exemplo, uma string vazia)*/
+
+function exibirMensagem ($mensagem, $pessoa = ""){
+    return "Olá, $mensagem $pessoa";
+}
+
+?>
+
+<p>Saudação 1: <?= exibirMensagem("Boa tarde", "samuel") ?></p>
+<p>Saudação 2: <?= exibirMensagem("Bom dia") ?></p>
+
+<hr>
+
+<h2>Função com  indução de tipos de dados</h2>
+<p>Nesta abordagem, definimos tipos de dados para os parâmetros e para o retorno da função.</p>
+ <?php 
+ function verificarNegativo (int $valor):string{
+ if($valor < 0) return "é negativo";
+ return "não é negativo";
+
+ }
+ ?>
+<p>Número 10 : <?= verificarNegativo (10) ?></p>
+<p>Número - 10 : <?= verificarNegativo(-10) ?></p>
+
+<hr>
+
+<h2>Função anônima (ou lambda)</h2>
+<?php //Sempre Declare primeiro a função Antes de chamar
+$multiplicar = function( float $valor, float $valor2 ): float {
+    return $valor1 * $valor2;
+};
+?>
+
+<!-- Repare no uso do $ junto com o nome da função:-->
+ <p>Exemplo: <?= $multiplicar(10,2) ?></p>
+ <hr>
+
+ <h2>Arrow function</h2>
+ 
+ <?php 
+ $subtrair = fn(float $valor1, float $valor2):float => $valor1 - $valor2;
+ ?>
+<p>Exemplo: <?= $subtrair(10, 1) ?></p>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
