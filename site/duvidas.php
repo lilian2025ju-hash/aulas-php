@@ -1,6 +1,6 @@
 <?php require "includes/cabecalho.php"  ?>
 
-        <h2>Página de cursos</h2>
+        <h2>Página de dúvidas</h2>
         <p>Veja ae resposta frequentes:</p>
         <details>
             <summary>Quem será o próximo reprovado?
